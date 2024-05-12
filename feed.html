@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feed</title>
+</head>
+<body>
+  <h1>Feed</h1>
+  <ul id="feed">
+  {{#each items}}
+      <li>
+        <a href="/posts/{{_id}}">
+            <span class="user">{{username}}</span>
+            <span class="time">{{time}}</span>
+        </a>
+        <p class="text">{{text}}</p>
+        {{#if attachments}}
+          <span class="attachments">
+            <a class="attachment" href="{{attachments}}">
+              <i class="attachment-icon"></i>
+            </a>
+          </span>
+      {{/if}}
+      </li>
+  {{/each}}
+  </ul>
+</body>
+</html>
