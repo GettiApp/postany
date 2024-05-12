@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PostAny</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="/">PostAny</a>
+    </div>
+  </header>
+  <section>
+    <div class="sectionbar">
+      <a href="/">Home</a>
+      <a href="/feed">Feed</a>
+    </div>
+  </section>
+  <main>
+    <h1>Welcome to PostAny</h1>
+    <h2>Share your thoughts with the world!</h2>
+    <form action="/feed" method="GET">
+      <div>
+        <label for="text">Text</label>
+        <textarea id="text" name="text"></textarea>
+      </div>
+      <button type="submit">Share</Button>
+      {{#if errors}}
+        <ul class="errors">
+          {{#each errors}}
+            <li>{{message}}</li>
+          {{/each}}
+        </ul>
+      {{/if}}
+    </form>
+    <script src="app.js"></script>
+  </main>
+</body>
+</html>
